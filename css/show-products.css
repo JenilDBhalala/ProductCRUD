@@ -83,3 +83,11 @@ table{
     border: 2px solid green;
     background-color: white;
 }
+
+.search{
+    margin-top: 10px;
+    padding: 5px;
+    width: 30vw;
+    border: 2px solid green;
+    background-color: white;
+}
