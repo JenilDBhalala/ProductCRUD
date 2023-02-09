@@ -10,6 +10,7 @@ body{
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    margin-top: 200px;
 }
 
 .app-name{
@@ -52,7 +53,7 @@ textarea{
 
 }
 
-.add-product-btn{
+.back-btn{
     grid-row: 7/8;
     grid-column: 2/3;
     background-color: rgb(179, 223, 179);
@@ -63,19 +64,14 @@ textarea{
 }
 
 
-
-
-/* table css */
-table, tr, th, td{
-    border: 1px solid black;
-    border-collapse: collapse;
-    width: 80vw;
+.view-allproduct-btn{
+    margin-top: 20px;
+    padding: 5px;
+    background-color: rgb(179, 223, 179);
+    border: 1px solid green;
+    border-radius: 2px;
+    cursor: pointer;
+    font-size: 16px;
 }
 
-th{
-    padding: 10px;
-}
 
-table{
-    margin-top: 40px;
-}

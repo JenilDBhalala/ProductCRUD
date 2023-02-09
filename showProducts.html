@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/showProducts.css">
+    <title>Product CRUD App</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="title">All Products</h1>
+
+        <table class="table-class">
+            <thead>
+                <tr>
+                    <th>Product-Id</th>
+                    <th>Product-Name</th>
+                    <th>Product-URL</th>
+                    <th>Product-Price</th>
+                    <th>Product-Description</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+
+        <button class="add-product-btn">Add Product</button>
+        <select name="sortby" id="sortby">
+            <option value="no-filter">No Filtering</option>
+            <option value="sort-by-product-id">Sort By Product-Id</option>
+            <option value="sort-by-product-name">Sort By Product-Name</option>
+            <option value="sort-by-product-price">Sort By Product-Price</option>
+        </select>
+
+        <select name="sortorder" id="sort-order">
+            <option value="no-filter">No Filtering</option>
+            <option value="ascending">Ascending Sort</option>
+            <option value="descending">Descending Sort</option>
+        </select>
+    </div>
+    <script src="js/showProducts.js"></script>
+    <script src="js/updateProduct.js"></script>
+    <script src="js/deleteProduct.js"></script>
+</body>
+
+</html>
