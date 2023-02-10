@@ -1,4 +1,30 @@
+const productNameElement = document.getElementById('product-name');
+const productURLElement = document.getElementById('product-url');
+const productPriceElement = document.getElementById('product-price');
+const productDescriptionElement = document.getElementById('product-descr');
+
 var objWithIdIndex, product, productList;
+
+//checking form input fields validations
+function checkvalidity() {
+    if (!productNameElement.checkValidity()) {
+        productNameElement.reportValidity();
+    }
+    else if (!productURLElement.checkValidity()) {
+        productURLElement.reportValidity();
+    }
+    else if (!productPriceElement.checkValidity()) {
+        productPriceElement.reportValidity();
+    }
+    else if (!productDescriptionElement.checkValidity()) {
+        productDescriptionElement.reportValidity();
+    }
+    else {
+        return true;
+    }
+    return false;
+}
+
 
 //helper function which fetch particular product data by using id of that product 
 const fetchOldData = (id, productList) => {
@@ -40,10 +66,13 @@ const updateBtnElement = document.querySelector('.update-product-btn');
 //event-listener : whenever update-product-button will be clicked new updated form data will be stored into local-storage
 updateBtnElement.addEventListener('click', (e) => {
     e.preventDefault();
-    let updatedProductName = document.getElementById('product-name').value;
-    let updatedProductURL = document.getElementById('product-url').value;
-    let updatedProductPrice = document.getElementById('product-price').value;
-    let updatedProductDescription = document.getElementById('product-descr').value;
+    let updatedProductName = productNameElement.value;
+    let updatedProductURL = productURLElement.value;
+    let updatedProductPrice = productPriceElement.value;
+    let updatedProductDescription = productDescriptionElement.value;
+
+    const valid = checkvalidity();
+    if(!valid) return;
 
     productList.splice(objWithIdIndex, 1, { productId: product.productId, productName: updatedProductName, productURL: updatedProductURL, productPrice: updatedProductPrice, productDescription: updatedProductDescription });
     localStorage.setItem('productArr', JSON.stringify(productList))

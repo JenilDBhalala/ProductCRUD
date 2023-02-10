@@ -16,7 +16,7 @@ const debouncing = function (fn, delay=500){
         clearTimeout(timer);
 
         timer = setTimeout(()=>{
-            fn();
+            fn.apply(this);
         }, delay);
     }
 }
@@ -106,6 +106,7 @@ selectedSortingOrderElement.addEventListener('change', ()=>{
 
 //function for showing all products from local-storage 
 const showData = () => {    
+    console.log("hello")
     if (localStorage.getItem('productArr') == null) {
         productList = [];
     }
