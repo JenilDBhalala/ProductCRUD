@@ -1,4 +1,4 @@
-
+//function for delete particular product from local-storage using id of that product
 const deleteData = (id) => {
     let productList;
 

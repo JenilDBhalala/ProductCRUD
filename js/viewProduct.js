@@ -1,5 +1,6 @@
 var objWithIdIndex, product, productList;
 
+//helper function which fetch particular product data by using id of that product 
 const fetchOldData = (id, productList) => {
     objWithIdIndex = productList.findIndex((obj) => obj.productId === id);
     product = productList[objWithIdIndex];
@@ -15,6 +16,7 @@ const fetchOldData = (id, productList) => {
 }
 
 
+//function which displays particular product data by calling helper function
 const viewData = () => {
     const url = window.location.href;
 
@@ -26,14 +28,18 @@ const viewData = () => {
     }
 
     const [, id] = url.split('=');
+
+    //helper function
     fetchOldData(Number(id), productList)
 }
 
 viewData();
 
 
+
 const backBtnElement = document.querySelector('.back-btn');
 
+//back-button event listener
 backBtnElement.addEventListener('click', (e) => {
     e.preventDefault()
     window.location.replace('showProducts.html')

@@ -91,3 +91,8 @@ table{
     border: 2px solid green;
     background-color: white;
 }
+
+.product-img{
+    height: 100px;
+    width: auto
+}

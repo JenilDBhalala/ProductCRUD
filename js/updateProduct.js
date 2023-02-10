@@ -1,5 +1,6 @@
 var objWithIdIndex, product, productList;
 
+//helper function which fetch particular product data by using id of that product 
 const fetchOldData = (id, productList) => {
     objWithIdIndex = productList.findIndex((obj) => obj.productId === id);
     product = productList[objWithIdIndex];
@@ -14,7 +15,7 @@ const fetchOldData = (id, productList) => {
     localStorage.setItem('productArr', JSON.stringify(productList));
 }
 
-
+//function which displays particular product data in the form when we click on edit product button
 const updateData = () => {
     const url = window.location.href;
 
@@ -26,14 +27,17 @@ const updateData = () => {
     }
 
     const [, id] = url.split('=');
+
+    //helper function
     fetchOldData(Number(id), productList)
 }
 
 updateData();
 
 
-
 const updateBtnElement = document.querySelector('.update-product-btn');
+
+//event-listener : whenever update-product-button will be clicked new updated form data will be stored into local-storage
 updateBtnElement.addEventListener('click', (e) => {
     e.preventDefault();
     let updatedProductName = document.getElementById('product-name').value;
@@ -50,6 +54,8 @@ updateBtnElement.addEventListener('click', (e) => {
 
 const backBtnElement = document.querySelector('.back-btn');
 
+
+//back-button event listener
 backBtnElement.addEventListener('click', (e) => {
     e.preventDefault();
     window.location.replace('showProducts.html')
