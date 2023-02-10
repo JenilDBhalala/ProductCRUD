@@ -14,25 +14,25 @@
 
 <body>
     <div class="container">
-        <h1 class="app-name">Create Product</h1>
+        <h1 class="app-name">Add Product</h1>
 
         <form>
             <label for="product-name">Product-Name</label>
-            <input type="text" id="product-name" required/>
+            <input type="text" id="product-name" placeholder="Enter Product Name..." required/>
 
             <label for="product-url">Product-URL</label>
-            <input type="url" id="product-url" required/>
+            <input type="url" id="product-url" placeholder="Enter Product Image URL..." required/>
 
             <label for="product-price">Product-Price</label>
-            <input type="number" id="product-price" required/>
+            <input type="number" id="product-price" placeholder="Enter Product Price..." required/>
 
             <label for="product-descr">Product-Description</label>
-            <textarea id="product-descr" required></textarea >
+            <textarea id="product-descr" placeholder="Enter Product Description..." required></textarea >
 
+            <button class="view-allproduct-btn">View All Products</button>
             <button class="add-product-btn">Add Product</button>
         </form>
         
-        <button class="view-allproduct-btn">View All Products</button>
 
         <script src="js/createProduct.js"></script>
     </div>

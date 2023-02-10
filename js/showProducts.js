@@ -10,13 +10,13 @@ let searchFlag = false; //flag which helps to check whether search-box event is 
 
 //function which helps to achieve debouncing
 //this debouncing function helps to decrease show-product-data function calls at every keyup-event
+let timer;
 const debouncing = function (fn, delay=500){
-    let timer;
     return function() {
         clearTimeout(timer);
 
         timer = setTimeout(()=>{
-            fn.apply(this);
+            fn();
         }, delay);
     }
 }
@@ -152,18 +152,21 @@ const showData = () => {
     var html = '';
 
     productList.forEach((element, index) => {
-        html += '<tr>';
-        html += '<td>' + element.productId + '</td>';
-        html += '<td>' + element.productName + '</td>';
-        html += `<td> <img src = '${element.productURL}' alt='Product-Image' class = 'product-img'/> </td>`;
-        html += '<td>' + element.productPrice + '</td>';
-        html += '<td>' + element.productDescription + '</td>';
-        html += '<td>';
-        html += `<button onclick = '{window.location.replace("/updateProduct.html?=" + ${element.productId})}' class = 'edit-btn'>Edit</button>`;
-        html += `<button onclick = 'deleteData( ${element.productId} )' class = 'delete-btn'>Delete</button>`;
-        html += `<button onclick = '{window.location.replace("/viewProduct.html?=" + ${element.productId})}' class = 'view-btn'>View</button>`;
-        html += '</td>';
-        html += '</tr>';
+        html += `<tr>
+        <td class = 'table-product-id'> ${element.productId} </td>
+        <td class = 'table-product-name'> ${element.productName} </td>
+        <td class = 'table-product-url'> <img src = '${element.productURL}' alt = 'Product-Image' class = 'product-img'/> </td>
+        <td class = 'table-product-price'> ${element.productPrice} </td>
+        <td class = 'table-product-descr'> ${element.productDescription} </td>
+        <td class="table-actions">
+        <div class="table-action-btns">
+        <button onclick = '{window.location.replace("/updateProduct.html?=" + ${element.productId})}' class = 'edit-btn'>Edit</button>
+        <button onclick = 'deleteData( ${element.productId} )' class = 'delete-btn'>Delete</button>
+        <button onclick = '{window.location.replace("/viewProduct.html?=" + ${element.productId})}' class = 'view-btn'>View</button>
+        </div>
+        </td>
+        </tr>`
+
     })
     
     document.querySelector('tbody').innerHTML = html;

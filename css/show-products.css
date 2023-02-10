@@ -1,8 +1,14 @@
+*{
+    box-sizing: border-box;
+}
+
 body{
     box-sizing: border-box;
     margin: 0;
     padding: 0;
     font-family: 'Roboto', sans-serif;
+    background-color: rgb(224, 241, 224);
+    
 }
 
 .container{
@@ -16,10 +22,44 @@ body{
     font-size: 38px;
 }
 
+
+.search{
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    width: 30vw;
+    border: 2px solid green;
+    background-color: white;
+    font-size: 16px;
+}
+
+
+#sortby{
+    margin-top: 20px;
+    padding: 10px;
+    border: 2px solid green;
+    border-radius: 5px;
+    background-color: white;
+    font-size: 16px;
+}
+
+
+#sort-order{
+    margin-top: 20px;
+    margin-left: 20px;
+    padding: 10px;
+    border: 2px solid green;
+    border-radius: 5px;
+    background-color: white;
+    font-size: 16px;
+}
+
+
+
+/* table css */
 table, tr, th, td{
-    border: 1px solid black;
+    border: 2px solid green;
     border-collapse: collapse;
-    width: 80vw;
 }
 
 th, td{
@@ -28,14 +68,17 @@ th, td{
 
 table{
     margin-top: 40px;
+    margin-bottom: 60px;
+    width: 70vw;
 }
+
 
 .add-product-btn{
     margin-top: 20px;
-    padding: 5px;
+    padding: 10px;
     background-color: rgb(179, 223, 179);
-    border: 1px solid green;
-    border-radius: 2px;
+    border: 2px solid green;
+    border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
 }
@@ -44,55 +87,66 @@ table{
     padding: 5px;
     border: 2px solid blue;
     background-color: white;
-    border-radius: 2px;
+    border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
+    width: 80px;
 }
-
 
 .delete-btn{
     padding: 5px;
-    margin-left: 20px;
+    margin-left: 10px;
     border: 2px solid red;
     background-color: white;
-    border-radius: 2px;
+    border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
+    width: 80px;
 }
 
 .view-btn{
     padding: 5px;
-    margin-left: 20px;
+    margin-left: 10px;
     border: 2px solid green;
     background-color: white;
-    border-radius: 2px;
+    border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
+    width: 80px;
 }
 
-#sortby{
-    margin-top: 20px;
-    padding: 5px;
-    border: 2px solid green;
-    background-color: white;
-}
-
-#sort-order{
-    margin-top: 20px;
-    padding: 5px;
-    border: 2px solid green;
-    background-color: white;
-}
-
-.search{
-    margin-top: 10px;
-    padding: 5px;
-    width: 30vw;
-    border: 2px solid green;
-    background-color: white;
-}
 
 .product-img{
-    height: 100px;
-    width: auto
+    height: 100%;
+    width: 100%
+}
+
+.table-product-id{
+    width: 100px;
+}
+
+.table-product-name{
+    width: 100px;
+}
+
+
+.table-product-url{
+    width: 200px;
+}
+
+.table-product-price{
+    width: 120px;
+}
+
+.table-product-descr{
+    width: 120px;
+}
+
+.table-actions{
+    width: 100px;
+}
+
+.table-action-btns{
+    display: flex;
+    justify-content: center;
 }
